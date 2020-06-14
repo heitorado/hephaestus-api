@@ -3,4 +3,6 @@ class Material < ApplicationRecord
 
   has_many :recipe_has_materials
   has_many :recipes, through: :recipe_has_materials
+
+  belongs_to :user
 end
