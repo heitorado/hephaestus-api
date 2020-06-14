@@ -1,5 +1,8 @@
 module Types
   class QueryType < Types::BaseObject
+    field :recipe, resolver: Queries::Recipe
+    field :recipes, resolver: Queries::Recipes
+
     field :materials, [MaterialType], null: true do
       description 'Query for all materials in the database'
     end
