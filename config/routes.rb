@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   post "/graphql", to: "graphql#execute"
   resources :recipes
   resources :materials
