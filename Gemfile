@@ -13,6 +13,8 @@ gem 'puma', '~> 3'
 gem 'graphql'
 # Seamless JWT authentication for Rails API
 gem 'knock'
+# bcrypt-ruby is a Ruby binding for the OpenBSD bcrypt() password hashing algorithm, allowing you to easily store a secure hash of your users' passwords.
+gem 'bcrypt'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
