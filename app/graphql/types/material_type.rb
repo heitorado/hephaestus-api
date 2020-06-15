@@ -4,7 +4,7 @@ module Types
     field :name, String, null: true
     field :price, Float, null: true
     field :quantity, Float, null: true
-    field :measure, Int, null: true
+    field :measure, String, null: true
     field :notes, String, null: true
   end
 end
