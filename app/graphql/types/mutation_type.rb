@@ -4,5 +4,6 @@ module Types
     field :update_user, mutation: Mutations::UpdateUser
     field :create_material, mutation: Mutations::CreateMaterial
     field :update_material, mutation: Mutations::UpdateMaterial
+    field :create_recipe, mutation: Mutations::CreateRecipe
   end
 end
