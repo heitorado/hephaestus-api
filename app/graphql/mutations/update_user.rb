@@ -11,10 +11,10 @@ module Mutations
     field :user, Types::UserType, null: true
     field :errors, [String], null: false
 
-    def resolve(id:, name:, login:, email:, password:)
+    def resolve(id:, **attributes)
       user = User.find(id)
 
-      if(user.update_attributes(name: name, login: login, email: email, password: password))
+      if user.update(attributes)
         { user: user, errors: [] }
       else
         { user: nil, errors: user.errors.full_messages }
