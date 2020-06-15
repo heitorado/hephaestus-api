@@ -2,7 +2,7 @@ module Mutations
   class UpdateUser < Mutations::BaseMutation
     null true
 
-    argument :id, String, required: true
+    argument :id, Int, required: true
     argument :name, String, required: false
     argument :login, String, required: false
     argument :email, String, required: false

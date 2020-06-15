@@ -2,7 +2,7 @@ module Mutations
   class UpdateMaterial < Mutations::BaseMutation
     null true
 
-    argument :id, String, required: true
+    argument :id, Int, required: true
     argument :name, String, required: false
     argument :price, Float, required: false
     argument :quantity, Float, required: false
