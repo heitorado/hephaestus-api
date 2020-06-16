@@ -3,6 +3,7 @@ module Mutations
     null true
 
     argument :name, String, required: true
+    argument :description, String, required: false
     argument :material_ids, [Int], required: true
 
     field :recipe, Types::RecipeType, null: true
