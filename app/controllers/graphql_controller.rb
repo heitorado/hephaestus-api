@@ -20,6 +20,30 @@ class GraphqlController < ApplicationController
 
   private
 
+  def current_user
+    return unless decode_token
+
+    user_id = decode_token[0]['user_id']
+    @user = User.find_by(id: user_id)
+  end
+
+  def decode_token
+    return unless auth_header
+
+    # Stores only the token part
+    jwt_token = auth_header.split.second
+    begin
+      JWT.decode(jwt_token, 'secret', true, algorithm: 'HS256')
+    rescue JWT::DecodeError
+      nil
+    end
+  end
+
+  def auth_header
+    # { Authorization: 'JWT <token>' }
+    request.headers['Authorization']
+  end
+
   # Handle form data, JSON body, or a blank value
   def ensure_hash(ambiguous_param)
     case ambiguous_param

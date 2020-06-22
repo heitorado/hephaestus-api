@@ -6,5 +6,6 @@ module Types
     field :update_material, mutation: Mutations::UpdateMaterial
     field :create_recipe, mutation: Mutations::CreateRecipe
     field :update_recipe, mutation: Mutations::UpdateRecipe
+    field :sign_in_user, mutation: Mutations::SignInUser
   end
 end
