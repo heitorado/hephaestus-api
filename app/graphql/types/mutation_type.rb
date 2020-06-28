@@ -7,5 +7,6 @@ module Types
     field :create_recipe, mutation: Mutations::CreateRecipe
     field :update_recipe, mutation: Mutations::UpdateRecipe
     field :sign_in_user, mutation: Mutations::SignInUser
+    field :sign_up_user, mutation: Mutations::SignUpUser
   end
 end
