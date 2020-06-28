@@ -2,7 +2,7 @@ module Types
   class MaterialType < Types::BaseObject
     # Enables authorization by including the module that overrides
     # the class method 'authorized?'
-    extend Addons::Authorization
+    extend Addons::QueryAuthorization
 
     field :id, Int, null: false
     field :name, String, null: true
