@@ -13,8 +13,8 @@ module Mutations
       jwt_token = JWT.encode({ user_id: user.id }, 'secret')
 
       { jwt: jwt_token }
-    rescue ActiveRecord::RecordInvalid => error
-      GraphQL::ExecutionError.new(error.record.errors.full_messages.join(', ').to_s)
+    rescue ActiveRecord::RecordInvalid => e
+      GraphQL::ExecutionError.new('Invalid User', extensions: e.record.errors.messages)
     end
   end
 end
