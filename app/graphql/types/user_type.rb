@@ -1,5 +1,9 @@
 module Types
   class UserType < Types::BaseObject
+    # Enables authorization by including the module that overrides
+    # the class method 'authorized?'
+    extend Addons::Authorization
+
     field :id, Int, null: false
     field :name, String, null: false
     field :login, String, null: false
