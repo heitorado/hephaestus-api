@@ -10,5 +10,9 @@ module Types
     field :quantity, Float, null: true
     field :measure, String, null: true
     field :notes, String, null: true
+
+    def self.scope_items(items, context)
+      items.where(user: context[:current_user])
+    end
   end
 end

@@ -2,7 +2,7 @@ module Queries
   class Materials < Queries::BaseQuery
     description 'Find all materials'
 
-    type [Types::MaterialType], null: true
+    type [Types::MaterialType, null: true], null: true
 
     def resolve
       ::Material.all

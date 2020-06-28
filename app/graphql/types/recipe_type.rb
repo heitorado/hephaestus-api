@@ -8,5 +8,9 @@ module Types
     field :name, String, null: false
     field :description, String, null: true
     field :materials, [MaterialType], null: false
+
+    def self.scope_items(items, context)
+      items.where(user: context[:current_user])
+    end
   end
 end
