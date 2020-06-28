@@ -8,7 +8,7 @@ module Queries
 
 
     def resolve(id:)
-      ::Material.find(id)
+      ::Material.find_by(id: id, user: context[:current_user])
     end
   end
 end

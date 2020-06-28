@@ -5,7 +5,7 @@ module Queries
     type [Types::RecipeType, null: true], null: true
 
     def resolve
-      ::Recipe.all
+      ::Recipe.created_by(context[:current_user])
     end
   end
 end

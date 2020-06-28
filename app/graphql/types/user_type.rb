@@ -10,9 +10,5 @@ module Types
     field :email, String, null: false
     field :materials, [MaterialType], null: false
     field :recipes, [RecipeType], null: false
-
-    def self.scope_items(items, context)
-      items.where(id: context[:current_user]&.id)
-    end
   end
 end

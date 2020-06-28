@@ -5,7 +5,7 @@ module Queries
     type [Types::MaterialType, null: true], null: true
 
     def resolve
-      ::Material.all
+      ::Material.created_by(context[:current_user])
     end
   end
 end

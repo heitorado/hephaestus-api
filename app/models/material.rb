@@ -5,4 +5,6 @@ class Material < ApplicationRecord
   has_many :recipes, through: :recipe_has_materials
 
   belongs_to :user
+
+  scope :created_by, ->(user) { where(user: user) }
 end

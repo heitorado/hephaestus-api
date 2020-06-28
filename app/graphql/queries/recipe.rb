@@ -7,7 +7,7 @@ module Queries
     type Types::RecipeType, null: true
 
     def resolve(id:)
-      ::Recipe.find(id)
+      ::Recipe.find_by(id: id, user: context[:current_user])
     end
   end
 end
