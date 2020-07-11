@@ -7,4 +7,11 @@ class Material < ApplicationRecord
   belongs_to :user
 
   scope :created_by, ->(user) { where(user: user) }
+
+  # Calculates the minimum price per unit of that material.
+  # For instance, if a product costs $ 5, it's measured in g, and has
+  # 50g then the price per unit (grams, in this case) is $ 0.1.
+  def price_per_unit
+    price / quantity
+  end
 end
